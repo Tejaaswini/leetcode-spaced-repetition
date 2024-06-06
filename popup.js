@@ -29,13 +29,25 @@ document.getElementById('addProblemForm').addEventListener('submit', function (e
     problems.forEach((problem, index) => {
       const problemElement = document.createElement('tr');
       problemElement.innerHTML = `
-        <td>${problem.url}</td>
+        <td><a href="${problem.url}" target="_blank">${problem.url}</a></td>
         <td>${problem.nextReview}</td>
         <td>${problem.notes}</td>
-        <td><button class="edit-button" onclick="editProblem(${index})">Edit</button></td>
-        <td><button class="delete-button" onclick="deleteProblem(${index})">Delete</button></td>
+        <td><button class="edit-button" data-index="${index}">Edit</button></td>
+        <td><button class="delete-button" data-index="${index}">Delete</button></td>
       `;
       problemList.appendChild(problemElement);
+    });
+  
+    document.querySelectorAll('.edit-button').forEach(button => {
+      button.addEventListener('click', function() {
+        editProblem(this.dataset.index);
+      });
+    });
+  
+    document.querySelectorAll('.delete-button').forEach(button => {
+      button.addEventListener('click', function() {
+        deleteProblem(this.dataset.index);
+      });
     });
   }
   
