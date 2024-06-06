@@ -7,9 +7,21 @@
   <h1>LeetCode Spaced Repetition</h1>
   <form id="addProblemForm">
     <input type="text" id="problemUrl" placeholder="Enter LeetCode problem URL">
-    <button type="submit">Add Problem</button>
+    <textarea id="problemNotes" placeholder="Add notes about the problem"></textarea>
+    <button type="submit" class="add-button">Add Problem</button>
   </form>
-  <div id="problemList"></div>
+  <table id="problemTable">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Next Review</th>
+        <th>Notes</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="problemList"></tbody>
+  </table>
   <script src="popup.js"></script>
 </body>
 </html>
