@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "LeetCode Spaced Repetition",
+    "version": "1.0",
+    "description": "A tool to apply spaced repetition to LeetCode problems",
+    "permissions": [
+      "activeTab",
+      "notifications",
+      "storage"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+  
